@@ -5,9 +5,8 @@ interface Props {
 }
 
 export default function NavigationBar({ navigationList, selectedMenu, setSelectedMenu }: Props) {
-
     return (
-        <div className="w-[200px] bg-white h-full py-10 flex flex-col gap-y-10 justify-between shadow-lg">
+        <div className="sm:flex hidden sm:w-[200px] bg-white h-full py-10 flex-col gap-y-10 justify-between shadow-lg">
             <div className="flex flex-col gap-y-8">
                 <img src="/src/assets/icon/bookost_icon_with_text.svg" alt="Bookost logo" className="w-36 ml-6" />
                 <div className="flex flex-col">

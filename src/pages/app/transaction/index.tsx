@@ -1,11 +1,7 @@
-import React from "react";
-
 export default function TransactionPage() {
     return (
-        <div>
-            <h1>
-                Transaction Page
-            </h1>
+        <div className="w-full h-full flex flex-col items-center justify-start p-6 gap-y-8">
+            
         </div>
     )
 }

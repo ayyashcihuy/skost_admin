@@ -1,10 +1,10 @@
-import React from "react";
 import { useState } from "react";
 import NavigationBar from "../../components/Navbar"
 import DashboardPage from "./dashboard";
 import TransactionPage from "./transaction";
 import UserManagementPage from "./user_management";
 import VoucherPage from "./voucher";
+import HeaderBar from "../../components/Header";
 
 export default function MainDashboard() {
     const navigationList = [
@@ -14,8 +14,11 @@ export default function MainDashboard() {
     const [ selectedMenu, setSelectedMenu ] = useState<string>("dashboard");
 
     return (
-        <div className="flex flex-row w-full h-screen bg-[#EDEDED]">
+        <div className="flex sm:flex-row flex-col w-full sm:h-screen h-full sm:max-h-screen bg-[#EDEDED]"> 
+            <HeaderBar />
+
             <NavigationBar navigationList={navigationList} selectedMenu={selectedMenu} setSelectedMenu={setSelectedMenu} />
+            
             {
                 selectedMenu === "dashboard" ? 
                 <DashboardPage />

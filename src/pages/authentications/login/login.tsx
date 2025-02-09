@@ -1,6 +1,17 @@
+import { useNavigate } from "react-router-dom"
+
 export default function LoginComponent() {
+    const router = useNavigate();
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        const formData = new FormData(e.currentTarget);
+        console.log(formData);
+        router("/dashboard");
+    }
+
     return (
-        <form className="w-full flex flex-col items-center justify-center space-y-8 px-4" action="#" method="POST">
+        <form onSubmit={handleSubmit} className="w-full flex flex-col items-center justify-center space-y-8 px-4" action="#" method="POST">
             <div>
                 <img src="src/assets/icon/bookost_icon_with_text.svg" alt="Bookost Icon" className="w-50" />
             </div>
