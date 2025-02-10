@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 interface Props {
     navigationList: string[]
     selectedMenu: string
@@ -5,6 +7,8 @@ interface Props {
 }
 
 export default function NavigationBar({ navigationList, selectedMenu, setSelectedMenu }: Props) {
+    const navigate = useNavigate();
+    
     return (
         <div className="sm:flex hidden sm:w-[200px] bg-white h-full py-10 flex-col gap-y-10 justify-between shadow-lg">
             <div className="flex flex-col gap-y-8">
@@ -28,7 +32,7 @@ export default function NavigationBar({ navigationList, selectedMenu, setSelecte
                     <h1>Hi User!</h1>
                     <p>Bergabung 2025</p>
                 </div>
-                <button className="w-full bg-[#E74C3C] rounded-md p-2 text-white animation duration-200 hover:opacity-80 cursor-pointer">
+                <button onClick={() => navigate("/")} className="w-full bg-[#E74C3C] rounded-md p-2 text-white animation duration-200 hover:opacity-80 cursor-pointer">
                     Logout
                 </button>
             </div>
