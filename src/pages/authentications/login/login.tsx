@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom"
+import logo from "../../../assets/icon/bookost_icon_with_text.svg";
 
 export default function LoginComponent() {
     const router = useNavigate();
@@ -13,7 +14,7 @@ export default function LoginComponent() {
     return (
         <form onSubmit={handleSubmit} className="w-full flex flex-col items-center justify-center space-y-8 px-4" action="#" method="POST">
             <div>
-                <img src="src/assets/icon/bookost_icon_with_text.svg" alt="Bookost Icon" className="w-50" />
+                <img src={logo} alt="Bookost Icon" className="w-50" />
             </div>
             <div className="w-full">
                 <label htmlFor="email" className="mb-2 text-sm font-bold text-gray-900">Your email</label>
